@@ -3,16 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Teacher{
-
-string name="younis";
-public:
-    string get_name(){
-    return name;}
-
-
-
-};
 
 class course
 {
@@ -24,11 +14,11 @@ class course
         void set_availabilty(bool  courseAvailability);
         void set_description(string courseDescription);
         void set_outcomes(vector<string> courseOutcomes);
-        void set_limit(int courseLimit);
-        void set_fees(int courseprice);
+        void set_limit(int courseLimit); //limit number of students
+        void set_fees(int courseprice); // fees of course
         // teacher stters
-        void add_professor(Teacher new_prof);
-        void remove_professor(string removed_professor);
+        void add_professor(professor new_prof); // add professor to teaching sutff of course
+        void remove_professor(string removed_professor); // remove professor
 
         // course timetable
         void set_starting(string courseStart);
@@ -46,13 +36,13 @@ class course
         int get_limit();
         bool is_available();
         ///// getting all timetable
-        string get_starting();
-        string get_graduation();
-        string get_course_long();
-        string get_lecture_start();
-        string get_lecture_finish();
+        string get_starting(); // return starting day as string
+        string get_graduation();  // return last day of course as string
+        string get_course_long();  // return number of weeks course take
+        string get_lecture_start(); // return time of lecture starting
+        string get_lecture_finish(); // return time of lecture finishing
         ///// get_teachers_data
-        vector<Teacher> get_teachers_data();
+        vector<professor> get_teachers_data(); // return vector of teachers of current professor
 
 
 
@@ -94,7 +84,7 @@ class course
     /////////////////////////
     ////   teaching staff : the professors
 
-    vector < Teacher> teaching_staff;
+    vector < professor> teaching_staff;
     /////////////////////////
 
 

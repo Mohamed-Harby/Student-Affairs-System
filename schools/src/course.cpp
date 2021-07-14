@@ -58,7 +58,7 @@ fees=courseprice;
 }
 ////////////////
 // teaching staff operations
-void course::add_professor(Teacher new_prof){
+void course::add_professor(professor new_prof){
 
 teaching_staff.push_back(new_prof);
 
@@ -67,7 +67,7 @@ teaching_staff.push_back(new_prof);
 void course::remove_professor(string removed_professor){
 int removing_index=0;
 for (;removing_index< teaching_staff.size();removing_index++){
-    Teacher *current_teacher = &teaching_staff[removing_index];
+    professor *current_teacher = &teaching_staff[removing_index];
     if( current_teacher->get_name() == removed_professor) {
             teaching_staff.erase(teaching_staff.begin()+removing_index);
             break;
@@ -192,9 +192,7 @@ return course_time_map["lecture_finishing_time"];
 
 ///////////
 // get_teachers_data
-vector<Teacher> course::get_teachers_data(){
-
-
+vector<professor> course::get_teachers_data(){
 
 
 return teaching_staff;
